@@ -1,3 +1,14 @@
+//exact Solution
+function howManyMissing(arr) {
+  var start = arr[0];
+  var end = arr[arr.length - 1];
+  var expectedCount = end - start + 1;
+  var actualCount = arr.length;
+  Logger.log(expectedCount - actualCount);
+  return expectedCount - actualCount;
+}
+
+//flexable to min/max of the set
 function missingNumbers(array) {
   var max = Math.max(...array);
   var min = Math.min(...array);
@@ -12,10 +23,17 @@ function missingNumbers(array) {
   return count;
 }
 
-function test(){
-  missingNumbers([1,2,3,8,9]);
-  missingNumbers([1,3]);
-  missingNumbers([7,10,11,12]);
-  missingNumbers([11,1,3,5,7,9]);
+function test() {
+  missingNumbers([1, 2, 3, 8, 9]);
+  missingNumbers([1, 3]);
+  missingNumbers([7, 10, 11, 12]);
+  missingNumbers([11, 1, 3, 5, 7, 9]);
   missingNumbers([1]);
+
+  howManyMissing([1, 2, 3, 8, 9]);
+  howManyMissing([1, 3]);
+  howManyMissing([7, 10, 11, 12]);
+  howManyMissing([1, 3, 5, 7, 9, 11]);
+  howManyMissing([11, 1, 3, 5, 7, 9]);
+  howManyMissing([1]);
 }
