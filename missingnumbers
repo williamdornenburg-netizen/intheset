@@ -1,0 +1,21 @@
+function missingNumbers(array) {
+  var max = Math.max(...array);
+  var min = Math.min(...array);
+  var count = 0;
+  var set = new Set(array);
+  for (var x = min; x <= max; x++) {
+    if (!set.has(x)) {
+      count++;
+    }
+  }
+  Logger.log(count);
+  return count;
+}
+
+function test(){
+  missingNumbers([1,2,3,8,9]);
+  missingNumbers([1,3]);
+  missingNumbers([7,10,11,12]);
+  missingNumbers([11,1,3,5,7,9]);
+  missingNumbers([1]);
+}
